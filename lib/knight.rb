@@ -3,8 +3,7 @@ require_relative('board.rb')
 class Knight
   attr_accessor :graph, :graph_hash
 
-  def initialize(start)
-    @start = start
+  def initialize
     @board = Board.new.board_squares
     @graph = move_graph
     @graph_hash = nodes_to_hash
@@ -109,7 +108,3 @@ class MoveNode
     return false
   end
 end
-
-
-test_knight = Knight.new([0, 0])
-p test_knight.search([0,1], [6,3])
